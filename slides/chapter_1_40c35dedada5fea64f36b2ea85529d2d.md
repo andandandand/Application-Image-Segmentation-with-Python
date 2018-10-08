@@ -27,7 +27,7 @@ It's important to be aware that for any particular segmentation task, there's no
 
 
 ---
-## What is upsampling
+## What is upsampling?
 
 ```yaml
 type: "FullSlide"
@@ -35,7 +35,9 @@ key: "d6d5d80296"
 ```
 
 `@part1`
++ Upsampling is a data augmentation technique
 
++ Upsampling takes as input an image with dimension $m \times n$ to produce as output an image with dimension $ (m + k) \times (n + k) $
 
 
 `@script`
