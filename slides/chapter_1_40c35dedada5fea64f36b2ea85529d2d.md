@@ -27,7 +27,7 @@ It's important to be aware that for any particular segmentation task, there's no
 
 
 ---
-## What is upsampling?
+## What is upsampling and why do we use it?
 
 ```yaml
 type: "FullSlide"
@@ -35,9 +35,31 @@ key: "d6d5d80296"
 ```
 
 `@part1`
-+ Upsampling is a data augmentation technique
++ Upsampling takes as input an image with dimensions $m \times n$ to produce as output an image with dimensions $ (m + k) \times (n + k) $ 
 
-+ Upsampling takes as input an image with dimension $m \times n$ to produce as output an image with dimension $ (m + k) \times (n + k) $
++ Upsampling allows us to **increase the resolution of an image**
+
+![](https://cdn-images-1.medium.com/max/800/1*vPyOJ9-D-s2gzRhraY21YA.png)
+
+
+`@script`
+
+
+
+---
+## Upsampling in U-net
+
+```yaml
+type: "FullSlide"
+key: "ecffa7f52a"
+```
+
+`@part1`
++ Upsampling is used in U-net as a **data augmentation** technique to make the network learn **visual saliency** with **few training examples** 
+
++ Upsampling is part of the **decoder architecture** of the network
+
+![](https://cdn-images-1.medium.com/max/800/1*vPyOJ9-D-s2gzRhraY21YA.png)
 
 
 `@script`
