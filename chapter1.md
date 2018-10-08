@@ -58,3 +58,29 @@ The instructions that follow should be in bullet point form with clear guidance 
 # Update this to something more informative.
 success_msg("Some praise! Then reinforce a learning objective from the exercise.")
 ```
+
+---
+
+## Insert exercise title here
+
+```yaml
+type: VideoExercise
+key: ed065ad20c
+xp: 50
+```
+
+`@projector_key`
+f94b99a846a928f5948749ef986164c6
+
+---
+
+## Image Segmentation with Python
+
+```yaml
+type: VideoExercise
+key: 72ba8d7d3e
+xp: 50
+```
+
+`@projector_key`
+40c35dedada5fea64f36b2ea85529d2d
