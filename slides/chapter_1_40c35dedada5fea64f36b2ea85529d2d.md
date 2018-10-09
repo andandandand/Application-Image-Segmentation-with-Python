@@ -33,7 +33,7 @@ key: "18ebf1ba91"
 
 
 `@script`
-The paper describing this network was published in 2015 by a group led by Olaf Ronneberger (from Google's Deepmind) at Freiburg University. It quickly became both the state-of-the-art and the current benchmark against which other semantic segmentation algorithms are compared.
+The paper describing this network was published in 2015 by a group led by Olaf Ronneberger (from Google's Deepmind) at Freiburg University. It quickly became both the state-of-the-art and its original or "vanilla" version is the current benchmark against which other semantic segmentation algorithms are compared.
 
 
 ---
@@ -64,7 +64,7 @@ center_content: true
 ```
 
 `@part1`
-![](https://raw.githubusercontent.com/andandandand/images-for-colab-notebooks/master/data-science-bowl.png)
+![data science bowl](https://raw.githubusercontent.com/andandandand/images-for-colab-notebooks/master/data-science-bowl.png)
 
 
 `@script`
@@ -80,7 +80,7 @@ key: "6c8db6333f"
 ```
 
 `@part1`
-![](https://cdn-images-1.medium.com/max/800/1*dKPBgCdJx6zj3MpED3lcNA.png)
+![u-net architecture](https://cdn-images-1.medium.com/max/800/1*dKPBgCdJx6zj3MpED3lcNA.png)
 
 
 `@script`
@@ -100,7 +100,7 @@ In the next lessons, we're going to explore in detail each of the operations des
 
 
 ---
-## Downsampling with $3 \times 3$ convolutions
+## Downsampling with Convolutions
 
 ```yaml
 type: "FullSlide"
@@ -108,7 +108,23 @@ key: "ddbf8a548f"
 ```
 
 `@part1`
+```
+# a downsampling block in PyTorch
 
+# convolutions are defined by 3 x 3 kernels with stride = 1
+def make_conv_bn_relu(in_channels, out_channels, kernel_size=3, stride=1, padding=1):
+    return [
+        nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size,  stride=stride, padding=padding, bias=False),
+        # We normalize the batch of gradients
+        nn.BatchNorm2d(out_channels),
+        # use of ReLU as activation function
+        nn.ReLU(inplace=True)
+    ]
+self.down1 = nn.Sequential(
+    *make_conv_bn_relu(in_channels, 64, kernel_size=3, stride=1, padding=1 ),
+    *make_conv_bn_relu(64, 64, kernel_size=3, stride=1, padding=1 ),
+)
+```
 
 
 `@script`
@@ -167,74 +183,6 @@ key: "ecffa7f52a"
 + Upsampling is part of the **decoder architecture** of the network
 
 ![](https://cdn-images-1.medium.com/max/800/1*vPyOJ9-D-s2gzRhraY21YA.png)
-
-
-`@script`
-
-
-
----
-## Test slide with two rows and two columns
-
-```yaml
-type: "TwoRowsTwoColumns"
-key: "885c2e73d6"
-```
-
-`@part1`
-
-
-
-`@part2`
-
-
-
-`@part3`
-
-
-
-`@part4`
-
-
-
-`@script`
-
-
-
----
-## Test slide with two columns
-
-```yaml
-type: "TwoColumns"
-key: "912e3c0817"
-```
-
-`@part1`
-
-
-
-`@part2`
-
-
-
-`@script`
-
-
-
----
-## Test slide with two rows
-
-```yaml
-type: "TwoRows"
-key: "da7c4bf5e9"
-```
-
-`@part1`
-
-
-
-`@part2`
-
 
 
 `@script`
