@@ -84,7 +84,7 @@ key: "6c8db6333f"
 
 
 `@script`
-The name U-net comes from the shape of the architecture that has a downsampling path that compresses the image at its left side and an upsampling path at its right side that reconstructs it. 
+The name "U-net" comes from the U shape of the network architecture: it has a downsampling path that compresses the image at its left side and an upsampling path at its right side that reconstructs it. The downsampled features are concatenated with the upsampled features as a data augmentation technique built-in within the network.  
 
 In U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images to a synthetic or upsampled image. 
 
@@ -92,9 +92,9 @@ This extraction of features is done in the encoder part of the network, which is
 
 When we extract features we "downsample" the image, this means that we reduce its size and pick fragments of it.  
 
-We then "restore" the original image size in the decoder so that that we can classify every pixel in the original image.
+We then do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as "built-in" training examples.
 
-This is a type of "hardwired" data augmentation technique that allows the network to generalize better its labelings and learn with fewer training data. 
+This is a type of "hardwired" data augmentation technique that allows the network to generalize better its labelings and learn salient features with relatively few training images. 
 
 In the next lessons, we're going to explore in detail each of the operations described in the network.
 
