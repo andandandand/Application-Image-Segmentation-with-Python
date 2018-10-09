@@ -74,7 +74,7 @@ f94b99a846a928f5948749ef986164c6
 
 ---
 
-## Image Segmentation with Python
+## The U-net architecture
 
 ```yaml
 type: VideoExercise

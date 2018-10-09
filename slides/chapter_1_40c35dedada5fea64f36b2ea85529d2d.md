@@ -3,7 +3,7 @@ title: Insert title here
 key: 40c35dedada5fea64f36b2ea85529d2d
 
 ---
-## Upsampling Images  with the Transposed Convolution
+## The U-net network for semantic segmentation
 
 ```yaml
 type: "TitleSlide"
@@ -17,13 +17,29 @@ title: Research Programmer at Algorithmic Dynamics Lab
 
 
 `@script`
-In this video we're going to explore the workings of a particularly powerful upsampling technique which is the transposed convolution. The transposed convolution is one of the main components of the original U-net segmentation algorithm and it's used in the 'decoder' of the network to perform upsampling.   
+In this video we're going to explore the architecture of the U-net network for semantic segmentation. U-net has been shown to be one of the most successful image segmentation methhods based on deep learning and convolutional networks. Variations of the U-net architecture usually rank as the the top performers in Kaggle image segmentation competitions.
 
-The transposed convolution takes as input an image with size $m \times n$ and produces as output an image of size $(m + k) \times (n + k)$   
 
-The transposed convolution is an alternative to both the nearest neighbor and bilinear interpolation techniques and differs from them in that it's trained alongside the network, whereas these other techniques work in a fixed manner.
+---
+## Encoder and decoder u-net architecture
 
-It's important to be aware that for any particular segmentation task, there's no guarantee that the tranposed convolution will outperform its simpler competitors according to the error metric of the algorithmm.
+```yaml
+type: "FullSlide"
+key: "6c8db6333f"
+```
+
+`@part1`
+![](https://cdn-images-1.medium.com/max/800/1*dKPBgCdJx6zj3MpED3lcNA.png)
+
+
+`@script`
+In the semantic segmentation algorithm U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images high image to a synthetic or upsampled image, as the image at the right shows. We're going to explore in detail each of these operations. 
+
+This extraction of features is done in the encoder part of the network, which is the left side of the "U" that we see in the diagram. 
+
+When we extract features we "downsample" the image, this means that we reduce its size and pick fragments of it.  
+
+We then "restore" the original image size in the decoder so that that we can classify every pixel in the original image.
 
 
 ---
