@@ -72,7 +72,7 @@ Since then, U-net has been shown to be one of the most successful image segmenta
 
 
 ---
-## Encoder-Decoder Architecture
+## Encoder-decoder architecture
 
 ```yaml
 type: "FullSlide"
@@ -100,7 +100,7 @@ In the next lessons, we're going to explore in detail each of the operations des
 
 
 ---
-## Downsampling with Convolutions
+## Downsampling with convolutions
 
 ```yaml
 type: "FullSlide"
@@ -109,7 +109,6 @@ key: "ddbf8a548f"
 
 `@part1`
 ```python
-# a downsampling block in PyTorch
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
 def make_conv_bn_relu(in_channels, out_channels, kernel_size=3, stride=1, padding=1):
@@ -143,22 +142,6 @@ self.down1 = nn.Sequential(
     *make_conv_bn_relu(64, 64, kernel_size=3, stride=1, padding=1 ),
 )
 ```
-
-
-`@script`
-
-
-
----
-## Insert title here...
-
-```yaml
-type: "FullCodeSlide"
-key: "3572ed66ad"
-```
-
-`@part1`
-
 
 
 `@script`
@@ -224,7 +207,7 @@ key: "ecffa7f52a"
 
 
 ---
-## Final Slide
+
 
 ```yaml
 type: "FinalSlide"
