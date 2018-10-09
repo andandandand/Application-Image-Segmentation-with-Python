@@ -17,11 +17,62 @@ title: Research Programmer at Algorithmic Dynamics Lab
 
 
 `@script`
-In this video we're going to explore the architecture of the U-net network for semantic segmentation. U-net has been shown to be one of the most successful image segmentation methhods based on deep learning and convolutional networks. Variations of the U-net architecture usually rank as the the top performers in Kaggle image segmentation competitions.
+In this video we're going to overview the architecture of the U-net network for semantic segmentation, which is the main deep learning algorithm that we will study in the course.
 
 
 ---
-## Encoder and decoder u-net architecture
+## State-of-the-art in semantic image segmentation
+
+```yaml
+type: "FullSlide"
+key: "18ebf1ba91"
+```
+
+`@part1`
+![u-net paper](https://raw.githubusercontent.com/andandandand/images-for-colab-notebooks/master/u-net-paper.png)
+
+
+`@script`
+This network was originally proposed in 2012 by a group led by Olaf Ronneberger of Freiburg University.
+
+
+---
+## ISBI Challenge 2012
+
+```yaml
+type: "FullSlide"
+key: "b112793dea"
+center_content: true
+```
+
+`@part1`
+![segmented neurons](http://brainiac2.mit.edu/isbi_challenge/sites/default/files/Challenge-ISBI-2012-sample-image.png)
++ **Semantic segmentation of neurons in electron microscopy images**
+
+
+`@script`
+U-net outperformed other semantic segmentation methods in the ISBI challenge, that was focused on the segmentation of neurons in electron microscopy.
+
+
+---
+## Data Science Bowl
+
+```yaml
+type: "FullSlide"
+key: "80305ab9c1"
+center_content: true
+```
+
+`@part1`
+![](https://raw.githubusercontent.com/andandandand/images-for-colab-notebooks/master/data-science-bowl.png)
+
+
+`@script`
+Since then, U-net has been shown to be one of the most successful image segmentation methods based on deep learning and convolutional networks. Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions.
+
+
+---
+## Encoder-Decoder Architecture
 
 ```yaml
 type: "FullSlide"
@@ -33,13 +84,47 @@ key: "6c8db6333f"
 
 
 `@script`
-In the semantic segmentation algorithm U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images high image to a synthetic or upsampled image, as the image at the right shows. We're going to explore in detail each of these operations. 
+U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images to a synthetic or upsampled image. In the next lessons, we're going to explore in detail each of these operations. 
 
 This extraction of features is done in the encoder part of the network, which is the left side of the "U" that we see in the diagram. 
 
 When we extract features we "downsample" the image, this means that we reduce its size and pick fragments of it.  
 
 We then "restore" the original image size in the decoder so that that we can classify every pixel in the original image.
+
+
+---
+## Downsampling with $3 \times 3$ convolutions
+
+```yaml
+type: "FullSlide"
+key: "ddbf8a548f"
+```
+
+`@part1`
+
+
+
+`@script`
+
+
+
+---
+## Upsampling Methods
+
+```yaml
+type: "FullSlide"
+key: "b3ca88165d"
+```
+
+`@part1`
++ Transposed convolution (produces **checkerboard** artifacts) 
++ Nearest neighbors interpolation followed by $1 \times 1$ convolutions
++ Bilinear or bicubic interpolations
+
+
+`@script`
+
 
 
 ---
