@@ -51,7 +51,7 @@ center_content: true
 
 
 `@script`
-U-net outperformed by a wide margin other semantic segmentation methods in challenges 2015, that were focused on the segmentation of neurons in biomedical images
+In 2015, U-net outperformed by a wide margin other semantic segmentation methods in challenges that were focused on the segmentation of biomedical images
 
 
 ---
@@ -84,15 +84,19 @@ key: "6c8db6333f"
 
 
 `@script`
-In U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images to a synthetic or upsampled image. This is a type of "hardwired" data augmentation technique that allows the network to generalize better its labelings and learn with fewer training data. 
+The name U-net comes from the shape of the architecture that has a downsampling path that compresses the image at its left side and an upsampling path at its right side that reconstructs it. 
 
-In the next lessons, we're going to explore in detail each of the operations described in the network. 
+In U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images to a synthetic or upsampled image. 
 
 This extraction of features is done in the encoder part of the network, which is the left side of the "U" that we see in the diagram. 
 
 When we extract features we "downsample" the image, this means that we reduce its size and pick fragments of it.  
 
 We then "restore" the original image size in the decoder so that that we can classify every pixel in the original image.
+
+This is a type of "hardwired" data augmentation technique that allows the network to generalize better its labelings and learn with fewer training data. 
+
+In the next lessons, we're going to explore in detail each of the operations described in the network.
 
 
 ---
