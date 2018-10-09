@@ -33,11 +33,11 @@ key: "18ebf1ba91"
 
 
 `@script`
-This network was originally proposed in 2012 by a group led by Olaf Ronneberger of Freiburg University.
+The paper describing this network was published in 2015 by a group led by Olaf Ronneberger (from Google's Deepmind) at Freiburg University. It quickly became both the state-of-the-art and the current benchmark against which other semantic segmentation algorithms are compared.
 
 
 ---
-## ISBI Challenge 2012
+## ISBI Challenge 2015
 
 ```yaml
 type: "FullSlide"
@@ -51,11 +51,11 @@ center_content: true
 
 
 `@script`
-U-net outperformed other semantic segmentation methods in the ISBI challenge, that was focused on the segmentation of neurons in electron microscopy.
+U-net outperformed by a wide margin other semantic segmentation methods in challenges 2015, that were focused on the segmentation of neurons in biomedical images
 
 
 ---
-## Data Science Bowl
+## Data Science Bowl 2018
 
 ```yaml
 type: "FullSlide"
@@ -68,7 +68,7 @@ center_content: true
 
 
 `@script`
-Since then, U-net has been shown to be one of the most successful image segmentation methods based on deep learning and convolutional networks. Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions.
+Since then, U-net has been shown to be one of the most successful image segmentation methods based on convolutional neural networks. Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
 
 
 ---
@@ -84,7 +84,9 @@ key: "6c8db6333f"
 
 
 `@script`
-U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images to a synthetic or upsampled image. In the next lessons, we're going to explore in detail each of these operations. 
+In U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images to a synthetic or upsampled image. This is a type of "hardwired" data augmentation technique that allows the network to generalize better its labelings and learn with fewer training data. 
+
+In the next lessons, we're going to explore in detail each of the operations described in the network. 
 
 This extraction of features is done in the encoder part of the network, which is the left side of the "U" that we see in the diagram. 
 
