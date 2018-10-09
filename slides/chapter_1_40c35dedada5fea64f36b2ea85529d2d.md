@@ -108,7 +108,7 @@ key: "ddbf8a548f"
 ```
 
 `@part1`
-```
+```python
 # a downsampling block in PyTorch
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
@@ -120,11 +120,45 @@ def make_conv_bn_relu(in_channels, out_channels, kernel_size=3, stride=1, paddin
         # use of ReLU as activation function
         nn.ReLU(inplace=True)
     ]
+
+```
+
+
+`@script`
+
+
+
+---
+## Activating with ReLU
+
+```yaml
+type: "FullSlide"
+key: "fd22b3b1a2"
+```
+
+`@part1`
+```python
 self.down1 = nn.Sequential(
     *make_conv_bn_relu(in_channels, 64, kernel_size=3, stride=1, padding=1 ),
     *make_conv_bn_relu(64, 64, kernel_size=3, stride=1, padding=1 ),
 )
 ```
+
+
+`@script`
+
+
+
+---
+## Insert title here...
+
+```yaml
+type: "FullCodeSlide"
+key: "3572ed66ad"
+```
+
+`@part1`
+
 
 
 `@script`
