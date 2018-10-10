@@ -128,7 +128,7 @@ key: "ddbf8a548f"
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
 nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3, 
-          stride=3, padding=, bias=False)
+          stride=3, padding=0, bias=False)
 
 ```
 
@@ -167,24 +167,16 @@ key: "2b9e193b79"
 ```python
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
-def make_conv_bn_relu(in_channels, out_channels, kernel_size=3, 
-                         stride=1, padding=1):
-    return [
-        nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size, 
-                   stride=stride, padding=padding, bias=False),
-        # We normalize the batch of gradients
-        nn.BatchNorm2d(out_channels),
-        # use of ReLU as activation function
-        nn.ReLU(inplace=True)
-    ]
+nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3, 
+          stride=3, padding=0, bias=False)
 
 ```
 
-`in_channels`: number of channels in the input image
+`padding`: refers 
 
-`out_channels`: number of channels in the output image
+`out_channels`: number of channels in the output image of learned features, also the **number of different kernels** that are applied to the input channels, each kernel will have different trained weights
 
-`kernel_size`: dimension of the convolution filter
+`kernel_size`: square dimension of each convolution filter
 
 
 `@script`
@@ -271,7 +263,7 @@ key: "ecffa7f52a"
 
 
 ---
-## Insert title here...
+## Let's give it a try!
 
 ```yaml
 type: "FinalSlide"
