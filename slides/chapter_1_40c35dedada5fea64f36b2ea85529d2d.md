@@ -94,7 +94,7 @@ When we encode features we "downsample" the image, this means that we reduce its
 
 In the decoder, we do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as "built-in" training examples.
 
-This is a type of "hardwired" data augmentation technique that allows the network to generalize better its labeling and learn salient features with relatively few training images. 
+This is a type of "hardwired" data augmentation technique that allows the network to learn features with relatively few training images. 
 
 In the next lessons, we're going to explore in detail each of the operations described in the network.
 
@@ -112,7 +112,7 @@ key: "be71e7aa5d"
 
 
 `@script`
-Since an image is just a matrix of pixel values, applying a convolution means multiplying small parts of our input images by the filter, which is also a small matrix of the same size. The small kernel matrix gets updated with the backpropagation algorithm and is comprised of weights that are trained and modified so that they reduce the pixel labeling error.
+Since an image is just a matrix of pixel values, applying a convolution means multiplying small parts of our input images by the filter, which is also a matrix. This small kernel matrix gets updated with the backpropagation algorithm and is comprised of weights that are trained and modified so that they reduce the pixel labeling error.
 
 
 ---
