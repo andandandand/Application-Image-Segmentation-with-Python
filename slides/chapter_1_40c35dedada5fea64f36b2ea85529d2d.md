@@ -100,6 +100,22 @@ In the next lessons, we're going to explore in detail each of the operations des
 
 
 ---
+## $3 \times 3$ Convolutions
+
+```yaml
+type: "FullSlide"
+key: "be71e7aa5d"
+```
+
+`@part1`
+![convolutions](http://deeplearning.stanford.edu/wiki/images/6/6c/Convolution_schematic.gif)
+
+
+`@script`
+Since an image is just a matrix of pixel values, applying a convolution means multiplying small parts of our input images by the filter, which is also a small matrix of the same size. The small kernel matrix gets updated with the backpropagation algorithm and is comprised of weights that are trained and modified so that they reduce the pixel labeling error.
+
+
+---
 ## Downsampling with convolutions
 
 ```yaml
@@ -111,9 +127,51 @@ key: "ddbf8a548f"
 ```python
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
-def make_conv_bn_relu(in_channels, out_channels, kernel_size=3, stride=1, padding=1):
+nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3, 
+          stride=3, padding=, bias=False)
+
+```
+
+`in_channels`: number of channels in the input image
+
+`out_channels`: number of channels in the output image of learned features, also the **number of different kernels** that are applied to the input channels, each kernel will have different trained weights
+
+`kernel_size`: square dimension of each convolution filter
+
+
+`@script`
+There are a few parameters that get adjusted here:
+
+Kernel Size – the size of the filter.
+
+Kernel Type – the values of the actual filter. Some examples include identity, edge detection, and sharpen.
+
+Stride – the rate at which the kernel passes over the input image. A stride of 2 moves the kernel in 2 pixel increments.
+
+Padding – we can add layers of 0s to the outside of the image in order to make sure that the kernel properly passes over the edges of the image.
+
+Output Layers – how many different kernels are applied to the image.
+
+The output of the convolution process is called the “convolved feature” or “feature map.” Remember: it’s just a filtered version of our original image where we multiplied some pixels by some numbers.
+
+
+---
+## Downsampling with convolutions
+
+```yaml
+type: "FullCodeSlide"
+key: "2b9e193b79"
+```
+
+`@part1`
+```python
+
+# convolutions are defined by 3 x 3 kernels with stride = 1
+def make_conv_bn_relu(in_channels, out_channels, kernel_size=3, 
+                         stride=1, padding=1):
     return [
-        nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size,  stride=stride, padding=padding, bias=False),
+        nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size, 
+                   stride=stride, padding=padding, bias=False),
         # We normalize the batch of gradients
         nn.BatchNorm2d(out_channels),
         # use of ReLU as activation function
@@ -121,6 +179,12 @@ def make_conv_bn_relu(in_channels, out_channels, kernel_size=3, stride=1, paddin
     ]
 
 ```
+
+`in_channels`: number of channels in the input image
+
+`out_channels`: number of channels in the output image
+
+`kernel_size`: dimension of the convolution filter
 
 
 `@script`
@@ -207,7 +271,7 @@ key: "ecffa7f52a"
 
 
 ---
-
+## Insert title here...
 
 ```yaml
 type: "FinalSlide"
