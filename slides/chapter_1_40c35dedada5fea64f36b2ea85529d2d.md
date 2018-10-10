@@ -128,7 +128,7 @@ key: "ddbf8a548f"
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
 nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3, 
-          stride=3, padding=0, bias=False)
+          stride=1, padding=0, bias=False)
 
 ```
 
@@ -136,7 +136,7 @@ nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3,
 
 `out_channels`: number of channels in the output image of learned features, also the **number of different kernels** that are applied to the input channels, each kernel will have different trained weights
 
-`kernel_size`: square dimension of each convolution filter
+`kernel_size`: square dimension of each convolution filter, $3 \times 3$ here
 
 
 `@script`
@@ -168,15 +168,36 @@ key: "2b9e193b79"
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
 nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3, 
-          stride=3, padding=0, bias=False)
+          stride=1, padding=0, bias=False)
 
 ```
 
-`padding`: refers 
+`stride`: stride is the distance in both rows and columns between applications of the convolution filter, a stride of 1 means that the kernel will move 1 column and 1 row in different applications
 
-`out_channels`: number of channels in the output image of learned features, also the **number of different kernels** that are applied to the input channels, each kernel will have different trained weights
+`padding`: 
 
-`kernel_size`: square dimension of each convolution filter
+`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, we leave that one for now
+
+
+`@script`
+
+
+
+---
+## Insert title here...
+
+```yaml
+type: "FullSlide"
+key: "141659d9ce"
+```
+
+`@part1`
+In the simplest case, the output value of the layer with input size (N,Cin,L) and output (N,Cout,Lout) can be precisely described as:
+
+$out(Ni,Coutj)=bias(Coutj)+∑k=0Cin−1weight(Coutj,k)⋆input(Ni,k)$
+
+,
+where ⋆ is the valid cross-correlation operator, N is a batch size, C denotes a number of channels, L is a length of signal sequence.
 
 
 `@script`
