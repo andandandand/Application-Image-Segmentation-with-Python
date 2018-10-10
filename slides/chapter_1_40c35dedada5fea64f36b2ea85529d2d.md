@@ -33,7 +33,7 @@ key: "18ebf1ba91"
 
 
 `@script`
-The paper describing this network was published in 2015 by a group led by Olaf Ronneberger (from Google's Deepmind) at Freiburg University. It quickly became both the state-of-the-art and its original or "vanilla" version is the current benchmark against which other semantic segmentation algorithms are compared.
+The paper describing this network was published in 2015 by a group led by Olaf Ronneberger at Freiburg University. It became both the state-of-the-art and its original or "vanilla" version is the current benchmark against which other semantic segmentation algorithms are compared.
 
 
 ---
@@ -68,7 +68,7 @@ center_content: true
 
 
 `@script`
-Since then, U-net has been shown to be one of the most successful image segmentation methods based on convolutional neural networks. Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
+U-net has been shown to be one of the most successful image segmentation methods based on convolutional neural networks. Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
 
 
 ---
@@ -84,7 +84,7 @@ key: "6c8db6333f"
 
 
 `@script`
-The name "U-net" comes from the U shape of the network architecture: it has a downsampling path that compresses the image at its left side and an upsampling path at its right side that reconstructs it. The downsampled features are concatenated with the upsampled features as a data augmentation technique built-in within the network.  
+The name "U-net" comes from the "U" shape of the network architecture: it has a downsampling path that compresses the image at its left side and an upsampling path at its right side that reconstructs it. The downsampled features are concatenated with the upsampled features as a data augmentation technique built-in within the network.  
 
 In U-net, in order to label pixels as belonging to a particular image class we map a convolution operation from original or downsampled images to a synthetic or upsampled image. 
 
@@ -172,36 +172,19 @@ nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3,
 
 ```
 
-`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one
+`stride`: is the distance in both rows and columns between applications of the convolution filter
 
-`padding`: 
+`padding`: filling applied to the borders of the image
 
 `bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter
 
 
 `@script`
+`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one means that a step of one will be applied between convolutions
 
+`padding`: filling applied to the borders of the image, here we fill the image with zeros
 
-
----
-## Insert title here...
-
-```yaml
-type: "FullSlide"
-key: "141659d9ce"
-```
-
-`@part1`
-In the simplest case, the output value of the layer with input size (N,Cin,L) and output (N,Cout,Lout) can be precisely described as:
-
-$out(Ni,Coutj)=bias(Coutj)+∑k=0Cin−1weight(Coutj,k)⋆input(Ni,k)$
-
-,
-where ⋆ is the valid cross-correlation operator, N is a batch size, C denotes a number of channels, L is a length of signal sequence.
-
-
-`@script`
-
+`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, this gives more freedom to the model as it gives one more value to train, we leave that out for now
 
 
 ---
