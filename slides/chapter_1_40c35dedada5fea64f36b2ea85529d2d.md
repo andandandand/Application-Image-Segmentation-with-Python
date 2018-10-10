@@ -184,27 +184,6 @@ nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3,
 
 
 ---
-## Activating with ReLU
-
-```yaml
-type: "FullSlide"
-key: "fd22b3b1a2"
-```
-
-`@part1`
-```python
-self.down1 = nn.Sequential(
-    *make_conv_bn_relu(in_channels, 64, kernel_size=3, stride=1, padding=1 ),
-    *make_conv_bn_relu(64, 64, kernel_size=3, stride=1, padding=1 ),
-)
-```
-
-
-`@script`
-
-
-
----
 ## Upsampling Methods
 
 ```yaml
