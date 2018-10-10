@@ -172,11 +172,11 @@ nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3,
 
 ```
 
-`stride`: stride is the distance in both rows and columns between applications of the convolution filter, a stride of 1 means that the kernel will move 1 column and 1 row in different applications
+`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one
 
 `padding`: 
 
-`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, we leave that one for now
+`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter
 
 
 `@script`
