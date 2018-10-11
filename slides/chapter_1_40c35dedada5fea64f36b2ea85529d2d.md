@@ -37,24 +37,6 @@ The paper describing this network was published in 2015 by a group led by Olaf R
 
 
 ---
-## ISBI Challenge 2015
-
-```yaml
-type: "FullSlide"
-key: "b112793dea"
-center_content: true
-```
-
-`@part1`
-![segmented neurons](http://brainiac2.mit.edu/isbi_challenge/sites/default/files/Challenge-ISBI-2012-sample-image.png)
-+ **Semantic segmentation of neurons in electron microscopy images**
-
-
-`@script`
-In 2015, U-net outperformed by a wide margin other semantic segmentation methods in challenges that were focused on the segmentation of biomedical images
-
-
----
 ## Data Science Bowl 2018
 
 ```yaml
@@ -68,7 +50,7 @@ center_content: true
 
 
 `@script`
-U-net has been shown to be one of the most successful image segmentation methods based on convolutional neural networks. Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
+Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
 
 
 ---
@@ -96,7 +78,7 @@ In the decoder, we do a lossy reconstruction of the original image size in the d
 
 This is a type of "hardwired" data augmentation technique that allows the network to learn features with relatively few training images. 
 
-In the next lessons, we're going to explore in detail each of the operations described in the network.
+We're gonna start exploring the role of convolutions in the architecture.
 
 
 ---
