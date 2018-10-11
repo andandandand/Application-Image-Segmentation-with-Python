@@ -33,7 +33,7 @@ key: "18ebf1ba91"
 
 
 `@script`
-The paper describing this network was published in 2015 by a group led by Olaf Ronneberger at Freiburg University. It became both the state-of-the-art and its original or "vanilla" version is the current benchmark against which other semantic segmentation algorithms are compared.
+The paper describing this network was published in 2015. It's original version is the current benchmark against which other semantic segmentation algorithms are compared.
 
 
 ---
