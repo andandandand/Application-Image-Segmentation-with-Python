@@ -17,7 +17,7 @@ title: Research Programmer at Algorithmic Dynamics Lab
 
 
 `@script`
-In this video we're going to overview the architecture of the U-net network for semantic segmentation, which is the main deep learning algorithm that we will explore in the course.
+Hi! In this video we're going to overview the architecture of the U-net network for semantic segmentation, which is the main deep learning algorithm that we will explore in the course.
 
 
 ---
@@ -33,7 +33,7 @@ key: "18ebf1ba91"
 
 
 `@script`
-The paper describing this network was published in 2015 by a group led by Olaf Ronneberger at Freiburg University. It became both the state-of-the-art and its original or "vanilla" version is the current benchmark against which other semantic segmentation algorithms are compared.
+The paper describing this network was published in 2015. It's original version is the current benchmark against which other semantic segmentation algorithms are compared.
 
 
 ---
@@ -50,7 +50,23 @@ center_content: true
 
 
 `@script`
-Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
+Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl and the Carvana Challenge
+
+
+---
+## Carvana Challenge
+
+```yaml
+type: "FullSlide"
+key: "da59395e65"
+```
+
+`@part1`
+![carvana](https://assets.datacamp.com/production/repositories/3732/datasets/bebc3d87266f391b1bac3c3d92c9f1d945f99148/carvana.png)
+
+
+`@script`
+
 
 
 ---
@@ -72,9 +88,9 @@ In U-net, in order to label pixels as belonging to a particular image class, we 
 
 This encoding of features is done in the encoder part of the network, which is the left side of the "U" that we see in the diagram. 
 
-When we encode features we "downsample" the image, this means that we reduce its size and pick fragments of it.  
+When we encode features we "downsample" the image, this means that we reduce its size and pick salient fragments of it.  
 
-In the decoder, we do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as "built-in" training examples.
+In the decoder, we do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as extra training examples.
 
 This is a type of "hardwired" data augmentation technique that allows the network to learn features with relatively few training images. 
 
@@ -82,7 +98,7 @@ We're gonna start exploring the role of convolutions in the architecture.
 
 
 ---
-## $3 \times 3$ Convolutions
+## $3 \times 3$ Convolutions with stride $=1$
 
 ```yaml
 type: "FullSlide"
@@ -98,7 +114,7 @@ Since an image is just a matrix of pixel values, applying a convolution means mu
 
 
 ---
-## Downsampling with convolutions
+## Downsampling with convolutions in PyTorch
 
 ```yaml
 type: "FullSlide"
@@ -109,7 +125,7 @@ key: "ddbf8a548f"
 ```python
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
-nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3, 
+nn.Conv2d(in_channels = 5, out_channels = 2, kernel_size=3, 
           stride=1, padding=0, bias=False)
 
 ```
@@ -164,11 +180,11 @@ nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3,
 
 
 `@script`
-`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one means that a step of one will be applied between convolutions
+`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one means that a step of one will be applied between convolutions, as seen in the animation
 
 `padding`: filling applied to the borders of the image, here we fill the image with zeros
 
-`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, giving more freedom to the model.  
+`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, giving more the network more generalization power.  
 
 We're gonna the effect of different combinations of these parameters in the next drill.
 
@@ -182,5 +198,5 @@ key: "4b6438c5d3"
 ```
 
 `@script`
-
+We're gonna take a better look at this convolution code in the next exercise.
 
