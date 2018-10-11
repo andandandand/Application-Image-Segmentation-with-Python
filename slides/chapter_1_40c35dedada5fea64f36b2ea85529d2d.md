@@ -50,7 +50,7 @@ center_content: true
 
 
 `@script`
-Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl and the Carvana Challenge
+Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
 
 
 ---
@@ -88,9 +88,9 @@ In U-net, in order to label pixels as belonging to a particular image class, we 
 
 This encoding of features is done in the encoder part of the network, which is the left side of the "U" that we see in the diagram. 
 
-When we encode features we "downsample" the image, this means that we reduce its size and pick salient fragments of it.  
+When we encode features we "downsample" the image, this means that we reduce its size and pick fragments of it.  
 
-In the decoder, we do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as extra training examples.
+In the decoder, we do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as "built-in" training examples.
 
 This is a type of "hardwired" data augmentation technique that allows the network to learn features with relatively few training images. 
 
@@ -98,7 +98,7 @@ We're gonna start exploring the role of convolutions in the architecture.
 
 
 ---
-## $3 \times 3$ Convolutions with stride $=1$
+## $3 \times 3$ Convolutions
 
 ```yaml
 type: "FullSlide"
@@ -138,21 +138,13 @@ nn.Conv2d(in_channels = 5, out_channels = 2, kernel_size=3,
 
 
 `@script`
-Here we have some PyTorch code that implements a 2D convolution on an image. 
+Here we look at a sample convolution in PyTorch
+ 
+`in_channels`: refers to the number of channels in the input image
 
-There are a few parameters that get adjusted here:
+`out_channels`: refers to the number of channels in the output image of learned features, also the **number of different kernels** that are applied to the input channels, each kernel will have different trained weights
 
-Kernel Size – the size of the filter.
-
-Kernel Type – the values of the actual filter. Some examples include identity, edge detection, and sharpen.
-
-Stride – the rate at which the kernel passes over the input image. A stride of 2 moves the kernel in 2 pixel increments.
-
-Padding – we can add layers of 0s to the outside of the image in order to make sure that the kernel properly passes over the edges of the image.
-
-Output Layers – how many different kernels are applied to the image.
-
-The output of the convolution process is called the “convolved feature” or “feature map.” Remember: it’s just a filtered version of our original image where we multiplied some pixels by some numbers.
+`kernel_size`: square dimension of each convolution filter, $3 \times 3$ here
 
 
 ---
@@ -180,13 +172,11 @@ nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3,
 
 
 `@script`
-`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one means that a step of one will be applied between convolutions, as seen in the animation
+`stride`: is the distance in both rows and columns between applications of the convolution filter
 
-`padding`: filling applied to the borders of the image, here we fill the image with zeros
+`padding`: filling applied to the borders of the image
 
-`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, giving more the network more generalization power.  
-
-We're gonna the effect of different combinations of these parameters in the next drill.
+`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, giving the network more generalization power
 
 
 ---
@@ -198,5 +188,5 @@ key: "4b6438c5d3"
 ```
 
 `@script`
-We're gonna take a better look at this convolution code in the next exercise.
+
 
