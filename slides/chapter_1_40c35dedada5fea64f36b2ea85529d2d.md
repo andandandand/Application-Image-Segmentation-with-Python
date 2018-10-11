@@ -88,9 +88,9 @@ In U-net, in order to label pixels as belonging to a particular image class, we 
 
 This encoding of features is done in the encoder part of the network, which is the left side of the "U" that we see in the diagram. 
 
-When we encode features we "downsample" the image, this means that we reduce its size and pick fragments of it.  
+When we encode features we "downsample" the image, this means that we reduce its size and pick salient fragments of it.  
 
-In the decoder, we do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as "built-in" training examples.
+In the decoder, we do a lossy reconstruction of the original image size in the decoder so that we can classify every pixel in the original image using slightly altered versions of the image as extra training examples.
 
 This is a type of "hardwired" data augmentation technique that allows the network to learn features with relatively few training images. 
 
