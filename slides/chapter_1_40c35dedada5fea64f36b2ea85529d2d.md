@@ -50,7 +50,7 @@ center_content: true
 
 
 `@script`
-Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl.
+Variations of the U-net architecture currently rank as the top performers in Kaggle image segmentation competitions such as the 2018 Data Science Bowl and the Carvana Challenge
 
 
 ---
@@ -114,7 +114,7 @@ Since an image is just a matrix of pixel values, applying a convolution means mu
 
 
 ---
-## Downsampling with convolutions
+## Downsampling with convolutions in PyTorch
 
 ```yaml
 type: "FullSlide"
@@ -125,7 +125,7 @@ key: "ddbf8a548f"
 ```python
 
 # convolutions are defined by 3 x 3 kernels with stride = 1
-nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3, 
+nn.Conv2d(in_channels = 5, out_channels = 2, kernel_size=3, 
           stride=1, padding=0, bias=False)
 
 ```
