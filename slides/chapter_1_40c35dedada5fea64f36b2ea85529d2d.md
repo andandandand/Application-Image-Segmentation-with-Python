@@ -17,7 +17,7 @@ title: Research Programmer at Algorithmic Dynamics Lab
 
 
 `@script`
-In this video we're going to overview the architecture of the U-net network for semantic segmentation, which is the main deep learning algorithm that we will explore in the course.
+Hi! In this video we're going to overview the architecture of the U-net network for semantic segmentation, which is the main deep learning algorithm that we will explore in the course.
 
 
 ---
