@@ -54,6 +54,22 @@ Variations of the U-net architecture currently rank as the top performers in Kag
 
 
 ---
+## Carvana Challenge
+
+```yaml
+type: "FullSlide"
+key: "da59395e65"
+```
+
+`@part1`
+![carvana](https://assets.datacamp.com/production/repositories/3732/datasets/bebc3d87266f391b1bac3c3d92c9f1d945f99148/carvana.png)
+
+
+`@script`
+
+
+
+---
 ## Encoder-decoder architecture
 
 ```yaml
