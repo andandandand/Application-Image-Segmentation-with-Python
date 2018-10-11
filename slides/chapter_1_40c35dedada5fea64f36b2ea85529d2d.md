@@ -98,7 +98,7 @@ We're gonna start exploring the role of convolutions in the architecture.
 
 
 ---
-## $3 \times 3$ Convolutions
+## $3 \times 3$ Convolutions with stride $=1$
 
 ```yaml
 type: "FullSlide"
@@ -180,11 +180,11 @@ nn.Conv2d(in_channels = 5, out_channels = 5, kernel_size=3,
 
 
 `@script`
-`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one means that a step of one will be applied between convolutions
+`stride`: is the distance in both rows and columns between applications of the convolution filter, a stride equal to one means that a step of one will be applied between convolutions, as seen in the animation
 
 `padding`: filling applied to the borders of the image, here we fill the image with zeros
 
-`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, giving more freedom to the model.  
+`bias`: refers to the inclusion of a bias unit that will be trained alongside the weights of the convolution filter, giving more the network more generalization power.  
 
 We're gonna the effect of different combinations of these parameters in the next drill.
 
@@ -198,5 +198,5 @@ key: "4b6438c5d3"
 ```
 
 `@script`
-
+We're gonna take a better look at this convolution code in the next exercise.
 
